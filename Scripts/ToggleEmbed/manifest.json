@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "version": "0.2",
+  "name": "Discord ToggleEmbed",
+  "author": "Kein",
+  "permissions": [ "https://discordapp.com/*" ],
+  "web_accessible_resources":
+  [
+    "inject.js",
+    "tgEmbed.css"
+  ],
+  "content_scripts":
+  [
+    {
+      "run_at": "document_idle",
+      "matches":
+      [
+        "https://discordapp.com/channels/*",
+        "https://discordapp.com/guild-discovery",
+        "https://discordapp.com/library"
+      ],
+      "exclude_matches":
+      [
+          "https://discordapp.com/"
+      ],
+      "js":  ["content.js" ]
+    }
+  ]
+}
